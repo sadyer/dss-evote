@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110708203137) do
+ActiveRecord::Schema.define(:version => 20110708211820) do
 
   create_table "ballots", :force => true do |t|
     t.boolean  "status"
@@ -18,17 +18,22 @@ ActiveRecord::Schema.define(:version => 20110708203137) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "owner_id"
   end
 
   create_table "eligibilities", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "user_id"
+    t.integer  "ballot_id"
   end
 
   create_table "preferences", :force => true do |t|
     t.integer  "preference"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "question_id"
+    t.string   "owner_id"
   end
 
   create_table "questions", :force => true do |t|
@@ -36,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20110708203137) do
     t.integer  "order"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "ballot_id"
   end
 
 end

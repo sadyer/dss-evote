@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Status</th>
-    <th>Dedline</th>
+    <th>deadline</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +12,7 @@
 <% @ballots.each do |ballot| %>
   <tr>
     <td><%= ballot.status %></td>
-    <td><%= ballot.dedline %></td>
+    <td><%= ballot.deadline %></td>
     <td><%= link_to 'Show', ballot %></td>
     <td><%= link_to 'Edit', edit_ballot_path(ballot) %></td>
     <td><%= link_to 'Destroy', ballot, :confirm => 'Are you sure?', :method => :delete %></td>
