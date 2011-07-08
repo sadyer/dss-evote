@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Status:</b>
+  <%= @ballot.status %>
+</p>
+
+<p>
+  <b>Dedline:</b>
+  <%= @ballot.dedline %>
+</p>
+
+
+<%= link_to 'Edit', edit_ballot_path(@ballot) %> |
+<%= link_to 'Back', ballots_path %>

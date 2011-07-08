@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  question: MyText
+  order: 1
+
+two:
+  question: MyText
+  order: 1

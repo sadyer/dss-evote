@@ -1,4 +1,10 @@
 DssEvote::Application.routes.draw do
+  resources :ballots
+
+  get "site/index"
+
+  get "site/contact"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
