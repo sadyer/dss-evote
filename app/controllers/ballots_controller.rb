@@ -25,7 +25,7 @@ class BallotsController < ApplicationController
   # GET /ballots/new.xml
   def new
     @ballot = Ballot.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @ballot }
@@ -79,5 +79,10 @@ class BallotsController < ApplicationController
       format.html { redirect_to(ballots_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def vote
+    @ballot = Ballot.find(params[:id])
+    
   end
 end

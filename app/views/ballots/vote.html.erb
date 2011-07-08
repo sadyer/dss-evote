@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<% if @ballot.status == false %>
+
+	<p>This ballot has expired.</p>
+
+<% else %>
+
+	<h3><%= @ballot.title %></h3>
+
+	<p>
+	  <i><%= @ballot.description %></i>
+	</p>
+
+	<p>
+	  <b>Notice:</b> This ballot will close at <%= @ballot.deadline %>.
+	</p>
+
+	<p>
+	  <b>Questions:</b>
+	  <ul>
+		<% for question in @ballot.questions %>
+		  <li>
+		    <%= question.question %><br />
+		    <ol style="list-style-type: none;">
+			  <li><input type="radio" name="question_<%= question.id %>" value="yes" /> Yes</li>
+			  <li><input type="radio" name="question_<%= question.id %>" value="no" /> No</li>
+			  <li><input type="radio" name="question_<%= question.id %>" value="decline" /> Decline</li>
+			</ol>
+		  </li>
+		<% end %>
+	  </ul>
+	</p>
+	
+	<p>
+	  <input type="submit" method="POST" value="Submit" />
+	</p>
+
+<% end %>
