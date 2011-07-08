@@ -1,3 +1,5 @@
+<%= javascript_include_tag "ballots" %>
+
 <%= form_for(@ballot) do |f| %>
   <% if @ballot.errors.any? %>
     <div id="error_explanation">
@@ -12,13 +14,23 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
     <%= f.label :status %><br />
     <%= f.check_box :status %>
   </div>
   <div class="field">
     <%= f.label :deadline %><br />
-    <%= f.text_field :deadline %>
+    <%= f.datetime_select :deadline %>
   </div>
+
+  <div id="questions">
+    <a href="javascript:add_a_question();">Add a Question</a>
+
+  </div> <!-- questions -->
+
   <div class="actions">
     <%= f.submit %>
   </div>
