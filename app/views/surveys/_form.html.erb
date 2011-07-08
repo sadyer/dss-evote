@@ -1,10 +1,10 @@
-<%= nested_form_for(@ballot) do |f| %>
-  <% if @ballot.errors.any? %>
+<%= nested_form_for(@survey) do |f| %>
+  <% if @survey.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@ballot.errors.count, "error") %> prohibited this ballot from being saved:</h2>
+      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
 
       <ul>
-      <% @ballot.errors.full_messages.each do |msg| %>
+      <% @survey.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

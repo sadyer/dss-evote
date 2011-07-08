@@ -1,3 +1,3 @@
 class Eligibility < ActiveRecord::Base
-  belongs_to :ballot
+  belongs_to :survey
 end

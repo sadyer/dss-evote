@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<% if @ballot.status == false %>
+<% if @survey.status == false %>
 
-	<p>This ballot has expired.</p>
+	<p>This survey has expired.</p>
 
 <% else %>
 
-	<h3><%= @ballot.title %></h3>
+	<h3><%= @survey.title %></h3>
 
 	<p>
-	  <i><%= @ballot.description %></i>
+	  <i><%= @survey.description %></i>
 	</p>
 
 	<p>
-	  <b>Notice:</b> This ballot will close at <%= @ballot.deadline %>.
+	  <b>Notice:</b> This survey will close at <%= @survey.deadline %>.
 	</p>
 
 	<p>
 	  <b>Questions:</b>
 	  <ul>
-		<% for question in @ballot.questions %>
+		<% for question in @survey.questions %>
 		  <li>
 		    <%= question.question %><br />
 		    <ol style="list-style-type: none;">

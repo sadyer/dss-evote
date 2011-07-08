@@ -10,23 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110708231722) do
+ActiveRecord::Schema.define(:version => 20110708235611) do
 
   create_table "ballots", :force => true do |t|
-    t.boolean  "status"
-    t.datetime "deadline"
-    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "survey_id"
+    t.datetime "submitted_on"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "owner_id"
-    t.string   "title"
   end
 
   create_table "eligibilities", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "user_id"
-    t.integer  "ballot_id"
+    t.integer  "survey_id"
   end
 
   create_table "preferences", :force => true do |t|
@@ -34,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20110708231722) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "question_id"
-    t.string   "owner_id"
+    t.string   "ballot_id"
   end
 
   create_table "questions", :force => true do |t|
@@ -42,7 +40,17 @@ ActiveRecord::Schema.define(:version => 20110708231722) do
     t.integer  "order"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "ballot_id"
+    t.integer  "survey_id"
+  end
+
+  create_table "surveys", :force => true do |t|
+    t.boolean  "status"
+    t.datetime "deadline"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "owner_id"
+    t.string   "title"
   end
 
 end

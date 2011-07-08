@@ -1,9 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  status: false
-  dedline: 
+  user_id: 1
+  survey_id: 1
+  submitted_on: 2011-07-08 16:56:11
 
 two:
-  status: false
-  dedline: 
+  user_id: 1
+  survey_id: 1
+  submitted_on: 2011-07-08 16:56:11

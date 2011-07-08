@@ -1,10 +1,5 @@
 DssEvote::Application.routes.draw do
-  resources :ballots do
-    member do
-      get 'vote'
-      post 'vote'
-    end
-  end
+  resources :surveys
 
   get "site/index"
 
